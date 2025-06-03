@@ -149,7 +149,7 @@ public void cargarDatosTabla(){
         });
         jScrollPane1.setViewportView(tablaCategorias);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 121, 782, 303));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 144, 782, 280));
 
         jLabel2.setText("Buscar");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 40, -1, -1));

@@ -141,7 +141,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="121" width="782" height="303"/>
+              <AbsoluteConstraints x="0" y="144" width="782" height="280"/>
             </Constraint>
           </Constraints>
 
