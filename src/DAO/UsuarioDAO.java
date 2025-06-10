@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author Edith
+ * @author Edith Cruz
  */
 public class UsuarioDAO {
     

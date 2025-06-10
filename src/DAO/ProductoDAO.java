@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author welvi
+ * @author Edith Cruz
  */
 public class ProductoDAO {
 public void crearProducto(Producto producto) throws SQLException {

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author Edith
+ * @author Edith Cruz
  */
 public class DetalleVentaDAO {
     public int crearDetalleVenta(DetalleVenta detalle) throws SQLException {

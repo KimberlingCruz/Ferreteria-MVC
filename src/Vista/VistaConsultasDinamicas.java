@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author welvi
+ * @author Edith Cruz
  */
 public class VistaConsultasDinamicas extends javax.swing.JPanel {
 
