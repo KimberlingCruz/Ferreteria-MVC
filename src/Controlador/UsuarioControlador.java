@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Edith
+ * @author welvin
  */
 public class UsuarioControlador {
     
@@ -74,6 +74,8 @@ public class UsuarioControlador {
         // Crear un usuario
         controlador.crearUsuario("ana", "ana2025");
 
+        
+        
         // Leer todos los usuarios
         List<Usuario> usuarios = controlador.obtenerTodosUsuarios();
         if (usuarios != null) {
@@ -90,4 +92,11 @@ public class UsuarioControlador {
         // Eliminar un usuario
         controlador.eliminarUsuario(1);
     }
+
+    public Usuario validarCredenciales(String usuario, String contrasena) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
+
+
+

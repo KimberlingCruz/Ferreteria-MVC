@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ */
 package Vista;
 
 import Controlador.EmpleadoControlador;
@@ -10,9 +13,9 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Edith Cruz
+ * @author welvi
  */
-public class VistaEmpleado extends javax.swing.JPanel {
+public class VistaEmpleados extends javax.swing.JPanel {
 
     private final EmpleadoControlador empleadoControlador;
     private Integer idEmpleadoSeleccionado = null;
@@ -20,7 +23,7 @@ public class VistaEmpleado extends javax.swing.JPanel {
     /**
      * Creates new form VsitaEmpleados
      */
-    public VistaEmpleado() {
+    public VistaEmpleados() {
         initComponents();
         this.empleadoControlador = new EmpleadoControlador();
         selectorfechaContratacion.setDate(new Date());
@@ -60,7 +63,7 @@ public class VistaEmpleado extends javax.swing.JPanel {
         selectorfechaContratacion.setDate(new Date());
         btnEliminar.setEnabled(true);
         btnGuardar.setEnabled(true);
-}
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,98 +74,65 @@ public class VistaEmpleado extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        textprimerNombre = new javax.swing.JTextField();
-        textsegundoNombre = new javax.swing.JTextField();
-        textprimerApellido = new javax.swing.JTextField();
-        textsegundoApellido = new javax.swing.JTextField();
-        textcelular = new javax.swing.JTextField();
-        Combocargo = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        textBuscar = new javax.swing.JTextField();
+        comboCargo = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaEmpleado = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        textprimerNombre = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        textsegundoNombre = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        textprimerApellido = new javax.swing.JTextField();
+        textsegundoApellido = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        textcelular = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        Combocargo = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        selectorfechaContratacion = new com.toedter.calendar.JDateChooser();
+        textBuscar = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
-        selectorfechaContratacion = new com.toedter.calendar.JDateChooser();
-        jLabel8 = new javax.swing.JLabel();
+        btnLimpiar = new javax.swing.JButton();
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("PrimerNombre");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 18, -1, -1));
-
-        jLabel2.setText("SegundoNombre");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 18, -1, -1));
-
-        jLabel3.setText("PrimerApellido");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 18, -1, -1));
-
-        jLabel4.setText("Celular");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 18, -1, -1));
-
-        jLabel5.setText("SegundoApellido");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 18, -1, -1));
-
-        jLabel6.setText("Cargo");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(565, 18, -1, -1));
-        jPanel1.add(textprimerNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 93, -1));
-
-        textsegundoNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textsegundoNombreActionPerformed(evt);
-            }
-        });
-        jPanel1.add(textsegundoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 40, 104, -1));
-
-        textprimerApellido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textprimerApellidoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(textprimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 40, 101, -1));
-        jPanel1.add(textsegundoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 40, 98, -1));
-
-        textcelular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textcelularActionPerformed(evt);
-            }
-        });
-        jPanel1.add(textcelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(442, 40, 91, -1));
-
-        Combocargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Supervisor", "Gerente", "Caja", " " }));
-        jPanel1.add(Combocargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 40, 79, -1));
-
-        jLabel7.setText("Fechacontratacion");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(648, 18, -1, -1));
-
-        textBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                textBuscarKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                textBuscarKeyTyped(evt);
-            }
-        });
-        jPanel1.add(textBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 93, 330, -1));
+        comboCargo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablaEmpleado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id_Empleado", " Nombre 1", " Nombre 2", " Apellido 1", " Apellido 2", "Celular", "Cargo", "Fecha Contratacion"
+                "ID Empleado", "Nombre1", "Nombre2", "Apellido1", "Apellido2", "Celular", "Cargo", "Fecha contratación"
             }
         ) {
             Class[] types = new Class [] {
@@ -187,23 +157,58 @@ public class VistaEmpleado extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tablaEmpleado);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 134, 770, 311));
+        comboCargo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 600, 219));
+
+        jLabel1.setText("Primer Nombre");
+        comboCargo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 6, -1, -1));
+        comboCargo.add(textprimerNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 160, -1));
+
+        jLabel2.setText("Segundo Nombre ");
+        comboCargo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 6, -1, -1));
+        comboCargo.add(textsegundoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 28, 160, -1));
+
+        jLabel3.setText("Primer Apellido");
+        comboCargo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 6, -1, -1));
+
+        jLabel4.setText("Segundo Apellido");
+        comboCargo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 6, -1, -1));
+        comboCargo.add(textprimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 28, 160, -1));
+        comboCargo.add(textsegundoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 28, 160, -1));
+
+        jLabel5.setText("Celular");
+        comboCargo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 62, -1, -1));
+        comboCargo.add(textcelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 160, -1));
+
+        jLabel6.setText("Cargo");
+        comboCargo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 62, -1, -1));
+
+        Combocargo.setEditable(true);
+        Combocargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Supervisor", "Cajero", "Gerente" }));
+        Combocargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CombocargoActionPerformed(evt);
+            }
+        });
+        comboCargo.add(Combocargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 84, 160, -1));
+
+        jLabel7.setText("Fecha Contratacion");
+        comboCargo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 62, -1, -1));
+        comboCargo.add(selectorfechaContratacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 84, 161, -1));
+
+        textBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textBuscarKeyTyped(evt);
+            }
+        });
+        comboCargo.add(textBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 338, -1));
 
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccionBotonGuardar(evt);
+                accionBotonGuardar(evt);
             }
         });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 93, 96, -1));
-
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccionBotonLimpiar(evt);
-            }
-        });
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 93, 106, -1));
+        comboCargo.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 120, -1));
 
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -211,48 +216,42 @@ public class VistaEmpleado extends javax.swing.JPanel {
                 accionBotonEliminar(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 93, 102, -1));
+        comboCargo.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 190, 120, -1));
 
         btnActualizar.setText("Actualizar");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AcciónBotonActualizar(evt);
+                accionBotonActualizar(evt);
             }
         });
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(658, 93, 91, -1));
-        jPanel1.add(selectorfechaContratacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(648, 40, 128, -1));
+        comboCargo.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 120, -1));
 
-        jLabel8.setText("Buscar");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 68, -1, -1));
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accionBotonLimpiar(evt);
+            }
+        });
+        comboCargo.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 290, 120, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(comboCargo, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(comboCargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textsegundoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textsegundoNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textsegundoNombreActionPerformed
-
-    private void textprimerApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textprimerApellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textprimerApellidoActionPerformed
-
-    private void textcelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textcelularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textcelularActionPerformed
-
-    private void AccionBotonGuardar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionBotonGuardar
-Date fecha = this.selectorfechaContratacion.getDate();
+    private void accionBotonGuardar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonGuardar
+        Date fecha = this.selectorfechaContratacion.getDate();
         java.sql.Date fechaContratacion = new java.sql.Date(fecha.getTime());
         String PrimerNombre = textprimerNombre.getText();
         String SegundoNombre = textsegundoNombre.getText();
@@ -272,101 +271,22 @@ Date fecha = this.selectorfechaContratacion.getDate();
         } else {
             javax.swing.JOptionPane.showMessageDialog(this, "Llene los campos requeridos.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
-    
-    }//GEN-LAST:event_AccionBotonGuardar
+    }//GEN-LAST:event_accionBotonGuardar
 
     private void accionBotonEliminar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonEliminar
-      int filaSeleccionada = tablaEmpleado.getSelectedRow();
+        int filaSeleccionada = tablaEmpleado.getSelectedRow();
         if (filaSeleccionada != -1) {
             int idEmpleado = (int) tablaEmpleado.getValueAt(filaSeleccionada, 0);
             empleadoControlador.eliminarEmpleado(idEmpleado);
             cargarDatosTabla();
-            
+
         } else {
             javax.swing.JOptionPane.showMessageDialog(this, "Selecciona una fila para eliminar. ", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
-            }
+        }
     }//GEN-LAST:event_accionBotonEliminar
 
-    private void AcciónBotonActualizar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcciónBotonActualizar
-       String primerNombre = textprimerNombre.getText();
-        String segundoNombre = textsegundoNombre.getText();
-        String primerApellido = textprimerApellido.getText();
-        String segundoApellido = textsegundoApellido.getText();
-        String celular = textcelular.getText();
-        String cargo = (String) Combocargo.getSelectedItem();
-        Date fecha = this.selectorfechaContratacion.getDate();
-        java.sql.Date fechaContratacion = new java.sql.Date(fecha.getTime());
-
-        if (idEmpleadoSeleccionado != null && !primerNombre.isEmpty() && !primerApellido.isEmpty() && !celular.isEmpty()) {
-            try {
-                empleadoControlador.actualizarEmpleado(idEmpleadoSeleccionado, primerNombre, segundoNombre, primerApellido, segundoApellido,
-                        celular, cargo, fechaContratacion);
-                cargarDatosTabla();
-                limpiar();
-            } catch (Exception e) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-        }
-    }//GEN-LAST:event_AcciónBotonActualizar
-
-    private void textBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textBuscarKeyPressed
-      String textoBusqueda = textBuscar.getText().trim().toLowerCase();
-        List<Empleado> empleados = empleadoControlador.obtenerTodosEmpleados();
-
-        DefaultTableModel modelo = (DefaultTableModel) tablaEmpleado.getModel();
-        modelo.setRowCount(0);
-
-        if (empleados != null) {
-            for (Empleado emp : empleados) {
-                if (textoBusqueda.isEmpty()
-                        || emp.getPrimerNombre().toLowerCase().contains(textoBusqueda)
-                        || (emp.getSegundoNombre() != null && emp.getSegundoNombre().toLowerCase().contains(textoBusqueda))
-                        || emp.getPrimerApellido().toLowerCase().contains(textoBusqueda)
-                        || (emp.getSegundoApellido() != null && emp.getSegundoApellido().toLowerCase().contains(textoBusqueda))
-                        || emp.getCelular().toLowerCase().contains(textoBusqueda)
-                        || emp.getCargo().toLowerCase().contains(textoBusqueda)) {
-
-                }
-
-                Object[] fila = {
-                    emp.getIdEmpleado(),
-                    emp.getPrimerNombre(),
-                    emp.getSegundoNombre(),
-                    emp.getPrimerApellido(),
-                    emp.getSegundoApellido(),
-                    emp.getCelular(),
-                    emp.getCargo(),
-                    emp.getFechaContratacion()
-                };
-                modelo.addRow(fila);
-
-            }
-        }
-    }//GEN-LAST:event_textBuscarKeyPressed
-
-    private void AccionBotonLimpiar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionBotonLimpiar
-       textprimerNombre.setText("");
-
-        textsegundoNombre.setText("");
-
-        textprimerApellido.setText("");
-
-        textsegundoApellido.setText("");
-
-        textcelular.setText("");
-
-        Combocargo.getSelectedItem();
-
-        selectorfechaContratacion.getDate();
-
-        btnEliminar.setEnabled(true);
-
-        btnGuardar.setEnabled(true);
-    }//GEN-LAST:event_AccionBotonLimpiar
-
     private void tablaEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEmpleadoMouseClicked
-       if (evt.getClickCount() == 2) {
+        if (evt.getClickCount() == 2) {
             int filaSeleccionada = tablaEmpleado.getSelectedRow();
             if (filaSeleccionada != -1) {
                 idEmpleadoSeleccionado = (int) tablaEmpleado.getValueAt(filaSeleccionada, 0);
@@ -391,8 +311,47 @@ Date fecha = this.selectorfechaContratacion.getDate();
                 btnGuardar.setEnabled(false);
 
             }
-        } 
+        }
     }//GEN-LAST:event_tablaEmpleadoMouseClicked
+
+    private void accionBotonActualizar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonActualizar
+        String primerNombre = textprimerNombre.getText();
+        String segundoNombre = textsegundoNombre.getText();
+        String primerApellido = textprimerApellido.getText();
+        String segundoApellido = textsegundoApellido.getText();
+        String celular = textcelular.getText();
+        String cargo = (String) Combocargo.getSelectedItem();
+        Date fecha = this.selectorfechaContratacion.getDate();
+        java.sql.Date fechaContratacion = new java.sql.Date(fecha.getTime());
+
+        if (idEmpleadoSeleccionado != null && !primerNombre.isEmpty() && !primerApellido.isEmpty() && !celular.isEmpty()) {
+            try {
+                empleadoControlador.actualizarEmpleado(idEmpleadoSeleccionado, primerNombre, segundoNombre, primerApellido, segundoApellido,
+                        celular, cargo, fechaContratacion);
+                cargarDatosTabla();
+                limpiar();
+            } catch (Exception e) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+        }
+    }//GEN-LAST:event_accionBotonActualizar
+
+    private void accionBotonLimpiar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonLimpiar
+        textprimerNombre.setText("");
+        textsegundoNombre.setText("");
+        textprimerApellido.setText("");
+        textsegundoApellido.setText("");
+        textcelular.setText("");
+        Combocargo.getSelectedItem();
+        selectorfechaContratacion.getDate();
+        btnEliminar.setEnabled(true);
+        btnGuardar.setEnabled(true);
+    }//GEN-LAST:event_accionBotonLimpiar
+
+    private void CombocargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CombocargoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CombocargoActionPerformed
 
     private void textBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textBuscarKeyTyped
         String textoBusqueda = textBuscar.getText().trim().toLowerCase();
@@ -424,7 +383,7 @@ Date fecha = this.selectorfechaContratacion.getDate();
 
             }
         }
-    }                                    
+        }
     }//GEN-LAST:event_textBuscarKeyTyped
 
 
@@ -434,6 +393,7 @@ Date fecha = this.selectorfechaContratacion.getDate();
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
+    private javax.swing.JPanel comboCargo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -441,8 +401,6 @@ Date fecha = this.selectorfechaContratacion.getDate();
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private com.toedter.calendar.JDateChooser selectorfechaContratacion;
     private javax.swing.JTable tablaEmpleado;

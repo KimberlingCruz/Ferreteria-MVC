@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package Vista;
 
 import Controlador.ProductoControlador;
@@ -14,9 +10,9 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Edith Cruz
+ * @author COMPHP
  */
-public class VistaProducto extends javax.swing.JPanel {
+public class VistaProductos extends javax.swing.JPanel {
 
     private final ProductoControlador productoControlador;
     private Integer idProductoSeleccionado = null;
@@ -26,7 +22,7 @@ public class VistaProducto extends javax.swing.JPanel {
     /**
      * Creates new form VistaProductos
      */
-    public VistaProducto() {
+    public VistaProductos() {
         initComponents();
         this.productoControlador = new ProductoControlador();
         this.categoriaControlador = new CategoriaControlador();
@@ -35,9 +31,9 @@ public class VistaProducto extends javax.swing.JPanel {
     }
 
     private void limpiar() {
-        textNombreprodcuto.setText("");
-        textdescripcionProducto.setText("");
-        textprecioUnitario.setText("");
+        textNombreProducto.setText("");
+        textDescripcionProducto.setText("");
+        textPrecioUnitario.setText("");
         textStock.setText("");
         textImagen.setText("");
         textBuscar.setText("");
@@ -72,10 +68,10 @@ public class VistaProducto extends javax.swing.JPanel {
             List<Categoria> categorias
                     = categoriaControlador.obtenerTodasCategorias();
 // Limpiar el combo box por si tiene datos
-            comboCategoria.removeAllItems();
+            ComboCategoria.removeAllItems();
 // Agregar cada categoría al combo box
             for (Categoria cat : categorias) {
-                comboCategoria.addItem(cat.getNombreCategoria());
+                ComboCategoria.addItem(cat.getNombreCategoria());
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this,
@@ -84,9 +80,9 @@ public class VistaProducto extends javax.swing.JPanel {
     }
 
     private void eventoComboCategorias() {
-        comboCategoria.addActionListener(e -> {
+        ComboCategoria.addActionListener(e -> {
             // Obtener el índice seleccionado
-            int indiceSeleccionado = comboCategoria.getSelectedIndex();
+            int indiceSeleccionado = ComboCategoria.getSelectedIndex();
 
             if (indiceSeleccionado >= 0) { // Verificar que se haya seleccionado algo
                 try {
@@ -117,7 +113,7 @@ public class VistaProducto extends javax.swing.JPanel {
             for (int i = 0; i < categorias.size(); i++) {
                 Categoria categoria = categorias.get(i);
                 if (categoria.getIdCategoria() == idCategoria) {
-                    comboCategoria.setSelectedIndex(i);
+                    ComboCategoria.setSelectedIndex(i);
                     break;
                 }
             }
@@ -125,6 +121,7 @@ public class VistaProducto extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Error al seleccionar categoría: " + e.getMessage());
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -135,69 +132,62 @@ public class VistaProducto extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        textNombreProducto = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        textDescripcionProducto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        textPrecioUnitario = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        textNombreprodcuto = new javax.swing.JTextField();
-        textdescripcionProducto = new javax.swing.JTextField();
-        textprecioUnitario = new javax.swing.JTextField();
         textStock = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         textImagen = new javax.swing.JTextField();
         textBuscar = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
-        comboCategoria = new javax.swing.JComboBox<>();
+        ComboCategoria = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel2.setText("NombreProducto");
 
-        jLabel1.setText("Nombre Producto");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
-
-        jLabel2.setText("Descripcion Producto");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, -1));
-
-        jLabel3.setText("ID Categoria");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, -1, -1));
-
-        jLabel4.setText("Precio Unitario");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, -1, -1));
-
-        jLabel5.setText("Stock");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, -1, -1));
-
-        jLabel6.setText("Imagen");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, -1, -1));
-        jPanel1.add(textNombreprodcuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 119, -1));
-        jPanel1.add(textdescripcionProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 130, -1));
-
-        textprecioUnitario.addActionListener(new java.awt.event.ActionListener() {
+        textNombreProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textprecioUnitarioActionPerformed(evt);
+                textNombreProductoActionPerformed(evt);
             }
         });
-        jPanel1.add(textprecioUnitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 123, -1));
+
+        jLabel1.setText("Descripcion");
+
+        jLabel3.setText("Categoria");
+
+        jLabel4.setText("PrecioUnitario");
+
+        textPrecioUnitario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textPrecioUnitarioActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Stock");
 
         textStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textStockActionPerformed(evt);
             }
         });
-        jPanel1.add(textStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 102, -1));
-        jPanel1.add(textImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 140, -1));
+
+        jLabel6.setText("Imagen");
 
         textBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textBuscarKeyTyped(evt);
             }
         });
-        jPanel1.add(textBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 87, 250, -1));
 
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -205,25 +195,20 @@ public class VistaProducto extends javax.swing.JPanel {
                 accionBotonGuardar(evt);
             }
         });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 114, -1));
 
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setText("Limpiar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
                 accionBotonLimpiar(evt);
             }
         });
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 109, -1));
 
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
                 accionBotonEliminar(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 110, -1));
 
         btnActualizar.setText("Actualizar");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -231,22 +216,47 @@ public class VistaProducto extends javax.swing.JPanel {
                 accionBotonActualizar(evt);
             }
         });
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, 120, -1));
 
         tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID Empleado", "Nombres", "Descripcion", "ID Categoria", "Precio", "Stock", "Imagen"
+                "ID Productos", "Nombre", "Descripcion", "ID Categoria", "Precio", "Stock", "Imagen"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Integer.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -259,15 +269,104 @@ public class VistaProducto extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tablaProductos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 123, 740, 300));
-
-        comboCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboCategoria.addActionListener(new java.awt.event.ActionListener() {
+        ComboCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eventocombocategoria(evt);
+                eventoComboCategoria(evt);
             }
         });
-        jPanel1.add(comboCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 100, -1));
+
+        jLabel7.setText("Buscar");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(textNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(textDescripcionProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jLabel1)
+                                        .addGap(94, 94, 94)
+                                        .addComponent(jLabel3)
+                                        .addGap(75, 75, 75)
+                                        .addComponent(jLabel4)
+                                        .addGap(66, 66, 66)
+                                        .addComponent(jLabel5))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel7))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(textBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnActualizar)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel6))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btnBuscar))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(251, 251, 251)
+                        .addComponent(ComboCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(textPrecioUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(textStock, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(textImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textDescripcionProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textPrecioUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnEliminar)
+                    .addComponent(btnActualizar)
+                    .addComponent(btnBuscar))
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -275,32 +374,36 @@ public class VistaProducto extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textprecioUnitarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textprecioUnitarioActionPerformed
+    private void textNombreProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreProductoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textprecioUnitarioActionPerformed
+    }//GEN-LAST:event_textNombreProductoActionPerformed
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+    private void textPrecioUnitarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPrecioUnitarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLimpiarActionPerformed
+    }//GEN-LAST:event_textPrecioUnitarioActionPerformed
+
+    private void textStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textStockActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textStockActionPerformed
 
     private void accionBotonGuardar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonGuardar
-     String nombreProducto = textNombreprodcuto.getText();
-    String descripcionProducto = textdescripcionProducto.getText();
+       
+    String nombreProducto = textNombreProducto.getText();
+    String descripcionProducto = textDescripcionProducto.getText();
     int idCategoria = idCategoriaSeleccionada;
-    float precioUnitario = Float.parseFloat(textprecioUnitario.getText());
-    int stock = Integer.parseInt(textprecioUnitario.getText());
+    float precioUnitario = Float.parseFloat(textPrecioUnitario.getText());
+    int stock = Integer.parseInt(textPrecioUnitario.getText());
     String imagen = textImagen.getText();
 
     if (!nombreProducto.isEmpty() &&
@@ -328,19 +431,11 @@ public class VistaProducto extends javax.swing.JPanel {
             "Por favor, llene todos los campos obligatorios correctamente.",
             "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
     }
-     
+               
     }//GEN-LAST:event_accionBotonGuardar
 
-    private void textStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textStockActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textStockActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarActionPerformed
-
     private void accionBotonEliminar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonEliminar
-     int filaSeleccionada = tablaProductos.getSelectedRow();
+        int filaSeleccionada = tablaProductos.getSelectedRow();
         if (filaSeleccionada != -1) {
             int idProducto = (int) tablaProductos.getValueAt(filaSeleccionada, 0);
             productoControlador.eliminarProducto(idProducto);
@@ -349,6 +444,38 @@ public class VistaProducto extends javax.swing.JPanel {
             javax.swing.JOptionPane.showMessageDialog(this, "Selecciona una fila para Eliminar.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_accionBotonEliminar
+
+    private void tablaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaProductosMouseClicked
+        if (evt.getClickCount() == 2) {
+
+            int filaSeleccionada = tablaProductos.getSelectedRow();
+
+            if (filaSeleccionada != -1) {
+
+                DefaultTableModel model = (DefaultTableModel) tablaProductos.getModel();
+
+                idProductoSeleccionado = (Integer) model.getValueAt(filaSeleccionada, 0);
+                String nombreProducto = (String) model.getValueAt(filaSeleccionada, 1);
+                String discripcionProducto = (String) model.getValueAt(filaSeleccionada, 2);
+                Integer idCategoria = (Integer) model.getValueAt(filaSeleccionada, 3);
+                Float precioUnitario = (Float) model.getValueAt(filaSeleccionada, 4);
+                Integer stock = (Integer) model.getValueAt(filaSeleccionada, 5);
+                String imagen = (String) model.getValueAt(filaSeleccionada, 6);
+
+                textNombreProducto.setText(nombreProducto);
+                textDescripcionProducto.setText(discripcionProducto);
+                textPrecioUnitario.setText(precioUnitario.toString());
+                textStock.setText(stock.toString());
+                textImagen.setText(imagen);
+
+                seleccionarCategoriaEnCombo(idCategoria);
+                idCategoriaSeleccionada = idCategoria;
+
+                textBuscar.setEnabled(false);
+                btnGuardar.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_tablaProductosMouseClicked
 
     private void textBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textBuscarKeyTyped
         String textoBusqueda = textBuscar.getText().trim().toLowerCase();
@@ -379,13 +506,14 @@ public class VistaProducto extends javax.swing.JPanel {
                 }
             }
         }
+
     }//GEN-LAST:event_textBuscarKeyTyped
 
     private void accionBotonActualizar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonActualizar
-       String nombreProducto = textNombreprodcuto.getText();
-        String descripcionProducto = textdescripcionProducto.getText();
+        String nombreProducto = textNombreProducto.getText();
+        String descripcionProducto = textDescripcionProducto.getText();
         int idCategoria = idCategoriaSeleccionada;
-        float PrecioUnitario = Float.parseFloat(textprecioUnitario.getText());
+        float PrecioUnitario = Float.parseFloat(textPrecioUnitario.getText());
         int stock = Integer.parseInt(textStock.getText());
         String imagen = textImagen.getText();
 
@@ -417,47 +545,15 @@ public class VistaProducto extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_accionBotonActualizar
 
-    private void tablaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaProductosMouseClicked
-        if (evt.getClickCount() == 2) {
-
-            int filaSeleccionada = tablaProductos.getSelectedRow();
-
-            if (filaSeleccionada != -1) {
-
-                DefaultTableModel model = (DefaultTableModel) tablaProductos.getModel();
-
-                idProductoSeleccionado = (Integer) model.getValueAt(filaSeleccionada, 0);
-                String nombreProducto = (String) model.getValueAt(filaSeleccionada, 1);
-                String discripcionProducto = (String) model.getValueAt(filaSeleccionada, 2);
-                Integer idCategoria = (Integer) model.getValueAt(filaSeleccionada, 3);
-                Float precioUnitario = (Float) model.getValueAt(filaSeleccionada, 4);
-                Integer stock = (Integer) model.getValueAt(filaSeleccionada, 5);
-                String imagen = (String) model.getValueAt(filaSeleccionada, 6);
-
-                textNombreprodcuto.setText(nombreProducto);
-                textdescripcionProducto.setText(discripcionProducto);
-                textprecioUnitario.setText(precioUnitario.toString());
-                textStock.setText(stock.toString());
-                textImagen.setText(imagen);
-
-                seleccionarCategoriaEnCombo(idCategoria);
-                idCategoriaSeleccionada = idCategoria;
-
-                textBuscar.setEnabled(false);
-                btnGuardar.setEnabled(false);
-            }
-        }
-    }//GEN-LAST:event_tablaProductosMouseClicked
-
     private void accionBotonLimpiar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonLimpiar
-       limpiar();
+        limpiar();
     }//GEN-LAST:event_accionBotonLimpiar
 
-    private void eventocombocategoria(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventocombocategoria
-        // TODO add your handling code here:
-        comboCategoria.addActionListener(e -> {
+    private void eventoComboCategoria(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventoComboCategoria
+         // TODO add your handling code here:
+        ComboCategoria.addActionListener(e -> {
         // Obtener el índice seleccionado
-        int indiceSeleccionado = comboCategoria.getSelectedIndex();
+        int indiceSeleccionado = ComboCategoria.getSelectedIndex();
 
         if (indiceSeleccionado >= 0) { // Verificar que se haya seleccionado algo
             try {
@@ -477,29 +573,32 @@ public class VistaProducto extends javax.swing.JPanel {
             }
         }
     });
-    }//GEN-LAST:event_eventocombocategoria
+
+                           
+    }//GEN-LAST:event_eventoComboCategoria
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ComboCategoria;
     private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnLimpiar;
-    private javax.swing.JComboBox<String> comboCategoria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaProductos;
     private javax.swing.JTextField textBuscar;
+    private javax.swing.JTextField textDescripcionProducto;
     private javax.swing.JTextField textImagen;
-    private javax.swing.JTextField textNombreprodcuto;
+    private javax.swing.JTextField textNombreProducto;
+    private javax.swing.JTextField textPrecioUnitario;
     private javax.swing.JTextField textStock;
-    private javax.swing.JTextField textdescripcionProducto;
-    private javax.swing.JTextField textprecioUnitario;
     // End of variables declaration//GEN-END:variables
 }

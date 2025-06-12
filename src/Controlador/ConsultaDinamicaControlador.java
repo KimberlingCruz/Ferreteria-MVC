@@ -11,7 +11,7 @@ import java.io.IOException;
 
 /**
  *
- * @author welvi
+ * @author Edith Cruz
  */
 public class ConsultaDinamicaControlador {
 

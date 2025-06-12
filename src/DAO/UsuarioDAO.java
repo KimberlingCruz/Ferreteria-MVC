@@ -10,10 +10,7 @@ import java.util.Date;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-/**
- *
- * @author Edith Cruz
- */
+
 public class UsuarioDAO {
     
 public void crearUsuario(Usuario usuario) throws SQLException {

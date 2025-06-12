@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Edith
+ * @author Edith Cruz
  */
 
 public class ClienteControlador {

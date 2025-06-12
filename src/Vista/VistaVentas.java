@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ */
 package Vista;
 
 import Controlador.VentaControlador;
@@ -23,9 +26,9 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Edith Cruz
+ * @author welvi
  */
-public class VistaVenta extends javax.swing.JPanel {
+public class VistaVentas extends javax.swing.JPanel {
 
     private final VentaControlador ventaControlador;
     private final DetalleVentaControlador detalleVentaControlador;
@@ -41,7 +44,7 @@ public class VistaVenta extends javax.swing.JPanel {
     /**
      * Creates new form VsitaEmpleados
      */
-    public VistaVenta() {
+    public VistaVentas() {
         initComponents();
         this.ventaControlador = new VentaControlador();
         this.detalleVentaControlador = new DetalleVentaControlador();
@@ -208,87 +211,89 @@ public class VistaVenta extends javax.swing.JPanel {
             }
         });
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        textPrecio = new javax.swing.JTextField();
         textBuscar = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaDetalles = new javax.swing.JTable();
-        jLabel6 = new javax.swing.JLabel();
+        selectorfechaVenta = new com.toedter.calendar.JDateChooser();
         comboClientes = new javax.swing.JComboBox<>();
         comboEmpleados = new javax.swing.JComboBox<>();
-        selectorfechaVenta = new com.toedter.calendar.JDateChooser();
-        comboProductos = new javax.swing.JComboBox<>();
         hora = new javax.swing.JLabel();
+        comboProductos = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        textPrecio = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         textCantidad = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        btnAgregar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
         tablaVentas = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        btnQuitarDetalle = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaDetalles = new javax.swing.JTable();
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setText(" Clientes");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
+        setBackground(new java.awt.Color(51, 255, 204));
 
-        jLabel2.setText(" Empleado");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText(" Cliente");
 
-        jLabel3.setText("Producto");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setText("Empleado");
 
-        jLabel4.setText("Fecha ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, -1, -1));
-
-        jLabel5.setText("Precio");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, -1, -1));
-        jPanel1.add(textPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 70, -1));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setText("Fecha");
 
         textBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textBuscarKeyTyped(evt);
             }
         });
-        jPanel1.add(textBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 130, -1));
 
-        btnGuardar.setText("Guardar");
+        btnGuardar.setText("Guardar Venta");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
                 accionBotonGuardar(evt);
             }
         });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 120, -1));
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
+                accionBotonLimpiar(evt);
             }
         });
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, 120, -1));
 
-        btnEliminar.setText("Eliminar");
+        btnEliminar.setText("Eliminar Venta");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
                 accionBotonEliminar(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 120, -1));
 
         btnActualizar.setText("Actualizar Venta");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -296,88 +301,72 @@ public class VistaVenta extends javax.swing.JPanel {
                 accionBotonActualizar(evt);
             }
         });
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 120, -1));
 
-        tablaDetalles.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "ID Producto", "Producto", "Precio Unitario", "Cantidad", "Subtotal"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+        comboClientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente1" }));
+        comboClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboClientesActionPerformed(evt);
             }
         });
-        jScrollPane1.setViewportView(tablaDetalles);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 730, 140));
+        comboEmpleados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Empleado1" }));
 
-        jLabel6.setText("Buscar");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
-
-        comboClientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(comboClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 90, -1));
-
-        comboEmpleados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(comboEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 70, -1));
-        jPanel1.add(selectorfechaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 130, -1));
-
-        comboProductos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(comboProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 90, -1));
-
+        hora.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         hora.setText("00:00:00");
-        jPanel1.add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, -1, -1));
 
+        comboProductos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Producto1" }));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setText("Producto");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setText("Precio");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Cantidad");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, -1, -1));
 
-        textCantidad.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textCantidadActionPerformed(evt);
+                accionBotonAgregarDetalle(evt);
             }
         });
-        jPanel1.add(textCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 90, -1));
-
-        jButton1.setText("Agregar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                accionBotonAgregar(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 90, -1));
 
         tablaVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID Ventas", "Fecha/Hora", "Cliente", " Vendedor", "Total"
+                "ID Ventas", "Fecha/Hora", "Cliente", "Vendedor", "Total"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Float.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -393,51 +382,167 @@ public class VistaVenta extends javax.swing.JPanel {
                 tablaVentasMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(tablaVentas);
+        jScrollPane3.setViewportView(tablaVentas);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 740, 120));
-
-        jButton2.setText("Quitar Detalle");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnQuitarDetalle.setText("Quitar Detalle");
+        btnQuitarDetalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                accionBotonQuitarDeatlle(evt);
+                accionBotonQuitarDetalle(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setText("Buscar");
+
+        tablaDetalles.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID Producto", "Producto", "Precio Unitario", "Catidad", "Subtotal"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tablaDetalles);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnGuardar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(6, 6, 6)
+                                .addComponent(textBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnQuitarDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(comboClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(comboEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jLabel1)
+                                .addGap(73, 73, 73)
+                                .addComponent(jLabel2)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(hora))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(selectorfechaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(comboProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(textPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(17, 17, 17)
+                                .addComponent(textCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(7, 7, 7)
+                                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jLabel6)
+                                .addGap(49, 49, 49)
+                                .addComponent(jLabel7)
+                                .addGap(54, 54, 54)
+                                .addComponent(jLabel8)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel4)
+                        .addComponent(hora)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel7)
+                        .addComponent(jLabel8)))
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selectorfechaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAgregar))))
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel5))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnQuitarDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnLimpiar)
+                    .addComponent(btnEliminar)
+                    .addComponent(btnActualizar)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardarActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarActionPerformed
-
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnLimpiarActionPerformed
-
-    private void textCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCantidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textCantidadActionPerformed
+    private void accionBotonLimpiar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonLimpiar
+        limpiar();
+    }//GEN-LAST:event_accionBotonLimpiar
 
     private void accionBotonGuardar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonGuardar
-       try {
+        try {
             // Obtener el índice seleccionado de clientes y empleados
             int indiceCliente = comboClientes.getSelectedIndex();
             int indiceEmpleado = comboEmpleados.getSelectedIndex();
@@ -497,7 +602,6 @@ public class VistaVenta extends javax.swing.JPanel {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al guardar la venta: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-    
     }//GEN-LAST:event_accionBotonGuardar
 
     private void accionBotonEliminar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonEliminar
@@ -533,115 +637,99 @@ public class VistaVenta extends javax.swing.JPanel {
 
     private void accionBotonActualizar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonActualizar
         try {
-        // Obtener el índice de la fila seleccionada en tablaVentas
-        int filaSeleccionada = tablaVentas.getSelectedRow();
-        if (filaSeleccionada == -1) {
-            JOptionPane.showMessageDialog(this, "Seleccione una venta para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+            // Obtener el índice de la fila seleccionada en tablaVentas
+            int filaSeleccionada = tablaVentas.getSelectedRow();
+            if (filaSeleccionada == -1) {
+                JOptionPane.showMessageDialog(this, "Seleccione una venta para actualizar.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-        // Obtener el idVenta de la fila seleccionada
-        DefaultTableModel model = (DefaultTableModel) tablaVentas.getModel();
-        int idVenta = (int) model.getValueAt(filaSeleccionada, 0);
+            // Obtener el idVenta de la fila seleccionada
+            DefaultTableModel modelVentas = (DefaultTableModel) tablaVentas.getModel();
+            int idVenta = (int) modelVentas.getValueAt(filaSeleccionada, 0);
 
-        // Confirmar con el usuario antes de eliminar
-        int confirmacion = JOptionPane.showConfirmDialog(this,
-                "¿Está seguro de que desea eliminar la venta con ID " + idVenta + "?",
-                "Confirmar Eliminación",
-                JOptionPane.YES_NO_OPTION);
-        if (confirmacion == JOptionPane.YES_OPTION) {
-            // Eliminar la venta
-            ventaControlador.eliminarVenta(idVenta);
+            // Obtener el índice seleccionado de clientes y empleados
+            int indiceCliente = comboClientes.getSelectedIndex();
+            int indiceEmpleado = comboEmpleados.getSelectedIndex();
+            if (indiceCliente < 0 || indiceEmpleado < 0) {
+                JOptionPane.showMessageDialog(this, "Seleccione un cliente y un empleado.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Obtener la lista de clientes y empleados
+            List<Cliente> clientes = clienteControlador.obtenerTodosClientes();
+            List<Empleado> empleados = empleadoControlador.obtenerTodosEmpleados();
+            int idCliente = clientes.get(indiceCliente).getIdCliente();
+            int idEmpleado = empleados.get(indiceEmpleado).getIdEmpleado();
+
+            // Obtener la fecha seleccionada
+            Date fechaVenta = selectorfechaVenta.getDate();
+            if (fechaVenta == null) {
+                JOptionPane.showMessageDialog(this, "Seleccione una fecha.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Obtener los detalles de la tabla tablaDetalles
+            DefaultTableModel modelDetalles = (DefaultTableModel) tablaDetalles.getModel();
+            int rowCount = modelDetalles.getRowCount();
+            if (rowCount == 0) {
+                JOptionPane.showMessageDialog(this, "Agregue al menos un producto a la venta.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calcular el total de la venta
+            float totalVenta = 0;
+            for (int i = 0; i < rowCount; i++) {
+                totalVenta += ((Number) modelDetalles.getValueAt(i, 4)).floatValue(); // Suma los subtotales
+            }
+
+            // Actualizar la venta principal
+            ventaControlador.actualizarVenta(idVenta, idCliente, idEmpleado, fechaVenta, totalVenta);
+
+            // Eliminar los detalles antiguos de la venta
+            List<DetalleVenta> detallesAntiguos = detalleVentaControlador.obtenerTodosDetallesVenta();
+            if (detallesAntiguos != null) {
+                for (DetalleVenta detalle : detallesAntiguos) {
+                    if (detalle.getIdVenta() == idVenta) {
+                        detalleVentaControlador.eliminarDetalleVenta(detalle.getIdDetalleVenta());
+                    }
+                }
+            }
+
+            // Insertar los nuevos detalles
+            List<DetalleVenta> nuevosDetalles = new ArrayList<>();
+            for (int i = 0; i < rowCount; i++) {
+                int idProducto = (int) modelDetalles.getValueAt(i, 0);
+                float precioUnitario = ((Number) modelDetalles.getValueAt(i, 2)).floatValue();
+                int cantidad = (int) modelDetalles.getValueAt(i, 3);
+
+                // Crear y guardar el nuevo detalle
+                DetalleVenta detalle = new DetalleVenta();
+                detalle.setIdVenta(idVenta);
+                detalle.setIdProducto(idProducto);
+                detalle.setCantidad(cantidad);
+                detalle.setPrecioUnitario(precioUnitario);
+                nuevosDetalles.add(detalle);
+                detalleVentaControlador.crearDetalleVenta(idVenta, idProducto, cantidad, precioUnitario);
+            }
+
+            // Limpiar la tabla de detalles y el formulario
+            tablaDetalles.setModel(new DefaultTableModel(new Object[][]{}, new String[]{"ID Producto", "Producto", "Precio Unitario", "Cantidad", "Subtotal"}));
+            limpiar();
 
             // Recargar la tabla de ventas
             cargarDatosTablaVentas();
-        }
 
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Error al eliminar la venta: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-    }
-    
+            // Habilitar botones nuevamente
+            btnEliminar.setEnabled(true);
+            btnGuardar.setEnabled(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al actualizar la venta: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_accionBotonActualizar
 
-    private void accionBotonQuitarDeatlle(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonQuitarDeatlle
-       try {
-            // Obtener el índice de la fila seleccionada en tablaDetalles
-            int filaSeleccionada = tablaDetalles.getSelectedRow();
-            if (filaSeleccionada == -1) {
-                JOptionPane.showMessageDialog(this, "Seleccione un detalle para quitar.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            // Eliminar la fila seleccionada del modelo de la tabla
-            DefaultTableModel model = (DefaultTableModel) tablaDetalles.getModel();
-            model.removeRow(filaSeleccionada);
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al quitar el detalle: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_accionBotonQuitarDeatlle
-
-    private void accionBotonAgregar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonAgregar
-       try {
-        // Obtener el índice seleccionado del comboProductos
-        int indiceSeleccionado = comboProductos.getSelectedIndex();
-        if (indiceSeleccionado < 0) {
-            JOptionPane.showMessageDialog(this, "Seleccione un producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Obtener la lista de productos
-        List<Producto> productos = productoControlador.obtenerTodosProductos();
-        Producto productoSeleccionado = productos.get(indiceSeleccionado);
-
-        // Obtener el precio unitario del producto
-        float precioUnitario = productoSeleccionado.getPrecioUnitario();
-
-        // Obtener la cantidad ingresada
-        String cantidadStr = textCantidad.getText().trim();
-        if (cantidadStr.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Ingrese una cantidad.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        int cantidad;
-        try {
-            cantidad = Integer.parseInt(cantidadStr);
-            if (cantidad <= 0) {
-                JOptionPane.showMessageDialog(this, "La cantidad debe ser mayor a 0.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "La cantidad debe ser un número entero válido.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Calcular el subtotal
-        float subtotal = precioUnitario * cantidad;
-
-        // Agregar los datos a la tabla tablaDetalles
-        DefaultTableModel model = (DefaultTableModel) tablaDetalles.getModel();
-        Object[] row = {
-            productoSeleccionado.getIdProducto(),
-            productoSeleccionado.getNombreProducto(),
-            precioUnitario,
-            cantidad,
-            subtotal
-        };
-        model.addRow(row);
-
-        // Limpiar los campos después de agregar
-        textCantidad.setText("");
-        textPrecio.setText("");
-        cargarProductos();
-
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Error al agregar el producto: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-    }
-    }//GEN-LAST:event_accionBotonAgregar
-
     private void textBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textBuscarKeyTyped
-       String textoBusqueda = textBuscar.getText().trim().toLowerCase();
+        String textoBusqueda = textBuscar.getText().trim().toLowerCase();
         List<Venta> ventas = ventaControlador.obtenerTodasVentas();
 
         DefaultTableModel modelo = (DefaultTableModel) tablaVentas.getModel();
@@ -668,7 +756,7 @@ public class VistaVenta extends javax.swing.JPanel {
                     modelo.addRow(fila);
                 }
             }
-            }
+        }
     }//GEN-LAST:event_textBuscarKeyTyped
 
     private void tablaVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaVentasMouseClicked
@@ -775,31 +863,113 @@ public class VistaVenta extends javax.swing.JPanel {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al cargar los datos de la venta: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-        }
+    }
     }//GEN-LAST:event_tablaVentasMouseClicked
+
+    private void accionBotonAgregarDetalle(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonAgregarDetalle
+        try {
+            // Obtener el índice seleccionado del comboProductos
+            int indiceSeleccionado = comboProductos.getSelectedIndex();
+            if (indiceSeleccionado < 0) {
+                JOptionPane.showMessageDialog(this, "Seleccione un producto.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Obtener la lista de productos
+            List<Producto> productos = productoControlador.obtenerTodosProductos();
+            Producto productoSeleccionado = productos.get(indiceSeleccionado);
+
+            // Obtener el precio unitario del producto
+            float precioUnitario = productoSeleccionado.getPrecioUnitario();
+
+            // Obtener la cantidad ingresada
+            String cantidadStr = textCantidad.getText().trim();
+            if (cantidadStr.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Ingrese una cantidad.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            int cantidad;
+            try {
+                cantidad = Integer.parseInt(cantidadStr);
+                if (cantidad <= 0) {
+                    JOptionPane.showMessageDialog(this, "La cantidad debe ser mayor a 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "La cantidad debe ser un número entero válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calcular el subtotal
+            float subtotal = precioUnitario * cantidad;
+
+            // Agregar los datos a la tabla tablaDetalles
+            DefaultTableModel model = (DefaultTableModel) tablaDetalles.getModel();
+            Object[] row = {
+                productoSeleccionado.getIdProducto(),
+                productoSeleccionado.getNombreProducto(),
+                precioUnitario,
+                cantidad,
+                subtotal
+            };
+            model.addRow(row);
+
+            // Limpiar los campos después de agregar
+            textCantidad.setText("");
+            textPrecio.setText("");
+            cargarProductos();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al agregar el producto: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_accionBotonAgregarDetalle
+
+    private void accionBotonQuitarDetalle(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionBotonQuitarDetalle
+        try {
+            // Obtener el índice de la fila seleccionada en tablaDetalles
+            int filaSeleccionada = tablaDetalles.getSelectedRow();
+            if (filaSeleccionada == -1) {
+                JOptionPane.showMessageDialog(this, "Seleccione un detalle para quitar.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Eliminar la fila seleccionada del modelo de la tabla
+            DefaultTableModel model = (DefaultTableModel) tablaDetalles.getModel();
+            model.removeRow(filaSeleccionada);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al quitar el detalle: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_accionBotonQuitarDetalle
+
+    private void comboClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboClientesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnQuitarDetalle;
     private javax.swing.JComboBox<String> comboClientes;
     private javax.swing.JComboBox<String> comboEmpleados;
     private javax.swing.JComboBox<String> comboProductos;
     private javax.swing.JLabel hora;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
     private com.toedter.calendar.JDateChooser selectorfechaVenta;
     private javax.swing.JTable tablaDetalles;
     private javax.swing.JTable tablaVentas;
